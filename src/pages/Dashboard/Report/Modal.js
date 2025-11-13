@@ -1,0 +1,59 @@
+import * as React from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import HorizontalStepperWithError from "../Stepper";
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 500,
+    // bgcolor: 'background.paper',
+    borderRadius: "20px",
+    background: "#F7F7FA",
+    boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.20)",
+    // border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
+
+export default function TransitionsModal(props) {
+    const { activeStep, open } = props;
+    //   const [open, setOpen] = React.useState(false);
+    //   const handleOpen = () => setOpen(true);
+    //   const handleClose = () => setOpen(false);
+
+    return (
+        <div>
+
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={open}
+                // onClose={handleClose}
+                closeAfterTransition
+                // slots={{ backdrop: Backdrop }}
+                // slotProps={{ backdrop: { sx: { background: 'rgb(0, 0, 0, 0.7)' } } }}
+                slotProps={{
+                    backdrop: {
+                        timeout: 500,
+                        sx: { background: 'rgb(0, 0, 0, 0.7)' }
+                    },
+                }}
+            >
+                <Fade in={open}>
+                    <Box sx={style}>
+                        <HorizontalStepperWithError
+                            activeStep={activeStep}
+                        />
+                    </Box>
+                </Fade>
+            </Modal>
+        </div>
+    );
+}

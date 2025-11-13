@@ -1,0 +1,160 @@
+.carousel .controls {
+    margin-bottom: 8px;
+}
+
+.carousel .slidesContainer {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .slidesContainer .slideIndicator {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    /* background: rgba(0, 0, 0, 0.1); */
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel .slidesContainer .slideIndicator .dot {
+    /* width: 10px;
+    height: 10px; */
+    width: 4px;
+    height: 4px;
+    background: rgba(239, 242, 245, 0.70);
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel .slidesContainer .slideIndicator .dot.active {
+    background: #fff;
+}
+
+.carousel .slidesContainer .scrollLeft,
+.carousel .slidesContainer .scrollRight {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 10;
+    font-size: 0.7em;
+    background: white;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
+
+.carousel .slidesContainer .scrollLeft.disabled,
+.carousel .slidesContainer .scrollRight.disabled {
+    opacity: 0.3;
+}
+
+.carousel .slidesContainer .scrollLeft {
+    left: 6px;
+}
+
+.carousel .slidesContainer .scrollRight {
+    right: 6px;
+}
+
+.carousel .slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+.transition {
+    transition: ease all 0.5s;
+}
+
+.carousel .slides .slide {
+    /* background: #dadada; */
+    display: flex;
+    position: relative;
+}
+
+.carousel .slides .slide .slideInner {
+    /* background: #dadada; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.carousel .slides .slide .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    font-size: 0.7em;
+    padding: 6px;
+}
+
+.customSlide {
+    display: flex;
+    flex-direction: column !important;
+    /* gap: 23px; */
+    align-items: center;
+    /* background: orange; */
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.slideTitle {
+    margin: 0;
+    font-size: 20px !important;
+    font-family: "Poppins-SemiBold";
+}
+
+.slideContent {
+    margin: 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+    .slideTitle {
+        font-size: 22px !important;
+    }
+
+    .slideContent {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .slideTitle {
+        font-size: 25px !important;
+    }
+
+    .slideContent {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .slideTitle {
+        font-size: 30px !important;
+    }
+
+    .slideContent {
+        font-size: 17px;
+    }
+}
+
+.withImage {
+    overflow: hidden;
+}
